@@ -9,11 +9,17 @@ const ipLogSchema = new mongoose.Schema({
   org: String,
   postal: String,
   timezone: String,
-  timestamp: {
+  timestampUTC: {
     type: Date,
     default: Date.now,
   },
+  timestampIST: {
+    type: String,
+    default: () =>
+      new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
+  },
 });
+
 
 const Iplog = mongoose.model("Iplog", ipLogSchema);
 module.exports = Iplog;
