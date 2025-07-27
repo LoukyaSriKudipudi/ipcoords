@@ -9,9 +9,14 @@ const geoCoordSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  timestamp: {
+  timestampUTC: {
     type: Date,
     default: Date.now,
+  },
+  timestampIST: {
+    type: String,
+    default: () =>
+      new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
   },
 });
 
