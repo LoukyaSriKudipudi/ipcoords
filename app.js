@@ -38,6 +38,9 @@ mongoose
   .then(() => console.log("✅ DB connection successful"))
   .catch((err) => console.error("❌ DB connection failed:", err));
 
+// ping
+app.get("/ping", (req, res)=>{
+  res.send('pong')})
 // Helper to get cleaned client IP
 function getClientIP(req) {
   const forwarded = req.headers["x-forwarded-for"];
