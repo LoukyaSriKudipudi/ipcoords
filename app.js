@@ -62,7 +62,7 @@ function logIP(req, res, next) {
 }
 
 // API Route to get IP info and save to DB
-app.get("/api", logIP, async (req, res) => {
+app.get("/api", async (req, res) => {
   const clientIP = getClientIP(req);
   // const clientIP = "8.8.8.8"; // Google's DNS
 
