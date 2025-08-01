@@ -72,8 +72,6 @@ app.get("/api", async (req, res) => {
     );
     const data = await response.json();
 
-    console.log("🌍 IP Info:", data);
-
     if (data.error) {
       console.error("❌ IPINFO error:", data.error.message);
       return res.status(403).json({
@@ -112,15 +110,6 @@ app.post("/realLocation", saveRealLocation);
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
-
-// Environment log
-console.log(
-  process.env.NODE_ENV === "development"
-    ? "🚧 Running in development mode"
-    : process.env.NODE_ENV === "production"
-    ? "🚀 Running in production mode"
-    : `ℹ️ Environment: ${process.env.NODE_ENV || "not set"}`
-);
 
 // Start server
 const PORT = process.env.PORT || 3000;
