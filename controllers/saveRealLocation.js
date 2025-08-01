@@ -6,8 +6,6 @@ const saveRealLocation = async (req, res) => {
 
     const newGeoCoords = await GeoCoord.create({ latitude, longitude });
 
-  
-
     res.status(201).json({
       status: "success",
       data: {
