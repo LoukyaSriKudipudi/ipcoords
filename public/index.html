@@ -13,15 +13,24 @@
       <!-- IP-based info -->
       <div class="info" id="ipInfo">Loading IP info...</div>
 
-      <!-- Real GPS location info -->
-      <div class="info" id="realCoords">
-        <!-- Real coordinates will show here after click -->
-      </div>
-
+      <!-- Button -->
       <div class="buttonContainer">
         <button id="locateMeBtn">📍 Show My Location</button>
       </div>
 
+      <!-- Real GPS coordinates -->
+      <div class="info" id="realCoords">
+        <!-- Will be filled by JS -->
+      </div>
+
+      <!-- Human-readable address from coordinates -->
+      <div class="info" id="realCoords"></div>
+      <div class="info" id="realAddress">
+        <h2>🧭 Address</h2>
+        <div>Not fetched yet.</div>
+      </div>
+
+      <!-- Map display -->
       <div class="map-container">
         <iframe
           class="iframe"
