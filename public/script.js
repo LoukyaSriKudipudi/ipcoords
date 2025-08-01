@@ -70,7 +70,6 @@ async function realLocation(position) {
     });
 
     const result = await response.json();
-    console.log("✅ Sent real location:", result.message);
   } catch (err) {
     console.error("❌ Failed to send real location:", err.message);
   }
