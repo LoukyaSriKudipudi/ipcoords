@@ -63,7 +63,7 @@ function logIP(req, res, next) {
 
 // Route: IP-based geolocation info
 app.get("/api", logIP, async (req, res) => {
-  const clientIP = "104.18.12.123"; // Use getClientIP(req) in production
+  const clientIP = getClientIP(req)
 
   try {
     const response = await fetch(
